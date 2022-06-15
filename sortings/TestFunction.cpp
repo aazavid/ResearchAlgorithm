@@ -30,7 +30,7 @@ unsigned int testTimeSort(int *mas, size_t len, void(*funcSort)(int*, size_t), i
 		funcSort(mas, len);
 		end_time = clock(); // finish timer
 
-		search_time += (end_time - start_time); // time
+		search_time += (end_time - start_time);
 		std::cout << "*";
 
 	}

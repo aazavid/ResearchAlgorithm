@@ -6,6 +6,6 @@ project(Tutorial)
 set(CMAKE_CXX_STANDARD 17)
 include_directories("sortings/")
 # add the executable
-set(SRC_LIST sortings/InsertSorting.cpp sortings/MergeSorting.cpp sortings/ServiceFunction.cpp sortings/TestFunction.cpp main.cpp sortings/HeapSorting.h sortings/HeapSorting.cpp)
+set(SRC_LIST sortings/InsertSorting.cpp sortings/MergeSorting.cpp sortings/ServiceFunction.cpp sortings/TestFunction.cpp main.cpp sortings/HeapSorting.h sortings/HeapSorting.cpp sortings/QuickSort.h sortings/QuickSort.cpp)
 
 add_executable(${PROJECT_NAME} ${SRC_LIST})

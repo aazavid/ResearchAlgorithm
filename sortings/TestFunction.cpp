@@ -17,9 +17,9 @@ void testRulesSort(int* mas, size_t len, void(*funcSort)(int*, size_t)) {
 }
 
 
-unsigned int testTimeSort(int *mas, size_t len, void(*funcSort)(int*, size_t), int period)
+void testTimeSort(const std::string &name, int *mas, size_t len, void(*funcSort)(int*, size_t), int period)
 {
-
+    std::cout << "Tests " << name.c_str()  << "sorting: ";
 	unsigned int start_time, end_time, search_time = 0;
 
 	for (size_t i = 0; i < period; i++)
@@ -35,5 +35,7 @@ unsigned int testTimeSort(int *mas, size_t len, void(*funcSort)(int*, size_t), i
 
 	}
 
-	return search_time / period;
+	unsigned  int time = search_time / period;
+    std::cout << std::endl;
+    std::cout << "Time algorithm " << name.c_str() <<" sort: " << time << "  Size: "<< len <<std::endl;
 }

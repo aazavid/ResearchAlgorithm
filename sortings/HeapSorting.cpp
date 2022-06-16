@@ -2,6 +2,7 @@
 // Created by anton on 15.06.2022.
 //
 #include "HeapSorting.h"
+#include "ServiceFunction.h"
 
 inline int get_parent(int i){
     return i/2;
@@ -30,9 +31,7 @@ void max_heapify(int *array, size_t size, int i){
         large = r;
     }
     if (large != i) {
-        int tmp = array[i];
-        array[i] = array[large];
-        array[large] = tmp;
+        swap(array[i], array[large]);
         max_heapify(array, size, large);
     }
 }
@@ -48,9 +47,7 @@ void heap_sort(int *array, size_t size){
     build_max_heap(array, size-1);
     auto heap_size = size-1;
     for(int i = size-1; i > 0; --i){
-        int tmp = array[0];
-        array[0] = array[i];
-        array[i] = tmp;
+        swap(array[0], array[i]);
         --heap_size;
         max_heapify(array, heap_size, 0);
     }

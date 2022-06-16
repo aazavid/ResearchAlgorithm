@@ -3,6 +3,7 @@
 //
 #include "QuickSort.h"
 #include "algorithm"
+#include "ServiceFunction.h"
 
 int partition(int *array, int l, int r){
     auto x = array[r];
@@ -10,9 +11,7 @@ int partition(int *array, int l, int r){
     for(auto j = l; j < r; ++j){
         if(array[j] <= x){
             ++i;
-            auto tmp = array[i];
-            array[i] = array[j];
-            array[j] = tmp;
+            swap(array[i], array[j]);
         }
     }
     auto tmp = array[i+1];
@@ -25,15 +24,12 @@ int median_partition(int *array, int l, int r){
     int m = r/2;
     if(array[l] > array[m]){
         if(array[l] < array[r]){
-            auto tmp = array[l];
-            array[l] = array[r];
-            array[r] = tmp;
+            swap(array[l], array[r]);
+
         }
     } else {
         if(array[m] < array[r]){
-            auto tmp = array[m];
-            array[m] = array[r];
-            array[r] = tmp;
+            swap(array[m], array[r]);
         }
     }
     return partition(array, l, r);
